@@ -1,3 +1,4 @@
+// For Local Storage
 const addToDb = (e) => {
   let breakTime = {};
 

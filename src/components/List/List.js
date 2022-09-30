@@ -18,7 +18,7 @@ const List = (props) => {
     }
   }, []);
 
-  const handleBreak = (e) => {
+  const handleToBreak = (e) => {
     setBreakTime(e.target.value);
     addToDb(e.target.value);
   };
@@ -79,10 +79,10 @@ const List = (props) => {
         Added A break{" "}
       </h4>
       <div className="localStorage">
-        <input onClick={handleBreak} value="10" type="button" />
-        <input onClick={handleBreak} value="20" type="button" />
-        <input onClick={handleBreak} value="30" type="button" />
-        <input onClick={handleBreak} value="40" type="button" />
+        <input onClick={handleToBreak} value="10" type="button" />
+        <input onClick={handleToBreak} value="20" type="button" />
+        <input onClick={handleToBreak} value="30" type="button" />
+        <input onClick={handleToBreak} value="40" type="button" />
       </div>
       <h3
         style={{
