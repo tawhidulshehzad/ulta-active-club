@@ -1,4 +1,4 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 
@@ -8,6 +8,7 @@ const List = (props) => {
   for (const lis of list) {
     total = total + lis.time;
   }
+  const notify = () => toast("wow done");
 
   return (
     <div>
@@ -84,6 +85,7 @@ const List = (props) => {
       <h4>Exercise time: {total}s </h4>
       <h4>Break time: </h4>
       <button
+        onClick={notify}
         style={{
           backgroundColor: "lightBlue",
           padding: "20px",
