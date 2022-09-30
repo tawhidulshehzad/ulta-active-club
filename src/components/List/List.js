@@ -1,3 +1,4 @@
+import './List.css'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
@@ -77,7 +78,7 @@ const List = (props) => {
       >
         Added A break{" "}
       </h4>
-      <div>
+      <div className="localStorage">
         <input onClick={handleBreak} value="10" type="button" />
         <input onClick={handleBreak} value="20" type="button" />
         <input onClick={handleBreak} value="30" type="button" />
