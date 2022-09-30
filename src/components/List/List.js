@@ -2,7 +2,7 @@ import './List.css'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
-import { addToDb, getStoredTime } from "../Database/Database";
+import { addToDab, getStoredTime } from "../Database/Database";
 
 const List = (props) => {
   const { list } = props;
@@ -20,7 +20,7 @@ const List = (props) => {
 
   const handleToBreak = (e) => {
     setBreakTime(e.target.value);
-    addToDb(e.target.value);
+    addToDab(e.target.value);
   };
 
   let total = 0;
