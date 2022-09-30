@@ -1,9 +1,27 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { addToDb, getStoredTime } from "../Database/Database";
 
 const List = (props) => {
   const { list } = props;
+  const [breakTime, setBreakTime] = useState([]);
+
+  useEffect(() => {
+    const storedTime = getStoredTime();
+    const savedBreakTime = [];
+    for (const e in storedTime) {
+      savedBreakTime.push(e);
+
+      setBreakTime(savedBreakTime);
+    }
+  }, []);
+
+  const handleBreak = (e) => {
+    setBreakTime(e.target.value);
+    addToDb(e.target.value);
+  };
+
   let total = 0;
   for (const lis of list) {
     total = total + lis.time;
@@ -59,19 +77,11 @@ const List = (props) => {
       >
         Added A break{" "}
       </h4>
-      <div
-        className="break"
-        style={{
-          backgroundColor: "lightGray",
-          padding: "5px",
-          borderRadius: "5px",
-          display: "flex",
-        }}
-      >
-        <h2>10</h2>
-        <h2>20</h2>
-        <h2>30</h2>
-        <h2>40</h2>
+      <div>
+        <input onClick={handleBreak} value="10" type="button" />
+        <input onClick={handleBreak} value="20" type="button" />
+        <input onClick={handleBreak} value="30" type="button" />
+        <input onClick={handleBreak} value="40" type="button" />
       </div>
       <h3
         style={{
@@ -83,7 +93,7 @@ const List = (props) => {
         Exercise Details
       </h3>
       <h4>Exercise time: {total}s </h4>
-      <h4>Break time: </h4>
+      <h4>Break Time: {breakTime} </h4>
       <button
         onClick={notify}
         style={{
