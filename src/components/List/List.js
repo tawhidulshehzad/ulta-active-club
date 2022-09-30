@@ -92,7 +92,7 @@ const List = (props) => {
       >
         Exercise Details
       </h3>
-      <h4>Exercise time: {total}s </h4>
+      <h4>Exercise Time: {total}s </h4>
       <h4>Break Time: {breakTime} </h4>
       <button
         onClick={notify}
@@ -109,5 +109,6 @@ const List = (props) => {
     </div>
   );
 };
+
 
 export default List;
